@@ -1,0 +1,21 @@
+#練習22:將本文檔讀一列 ；顯示一列； 停一秒
+
+#!/bin/bash
+echo "輸入要查找的檔名:"
+read a && [ -f $a ]
+[ $? == "1" ] && echo "此檔案不存在" && exit
+cat $a | while read aa
+do
+  echo $aa
+  sleep 1
+done
+echo;echo "--End--"1~#!/bin/bash
+echo "輸入要查找的檔名:"
+read a && [ -f $a ]
+[ $? == "1" ] && echo "此檔案不存在" && exit
+cat $a | while read aa
+do
+  echo $aa
+  sleep 1
+done
+echo;echo "--End--"

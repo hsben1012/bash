@@ -1,0 +1,13 @@
+#!/bin/bash
+read -p "開始值: " star
+read -p "結束值: " end
+echo
+while true
+do
+  if [ $star -le $end ] && [ $end -lt "255" ]; then
+    echo "127.0.0.$star"
+    star=$(($star+1))
+  else
+    break
+  fi
+done

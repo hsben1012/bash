@@ -1,0 +1,6 @@
+#!/bin/bash
+[ "$USER" != "root" ] && echo "need root to run" && exit
+. sre.conf
+
+echo $PROJECT_DIR
+

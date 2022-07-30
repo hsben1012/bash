@@ -1,0 +1,36 @@
+#!/bin/bash
+while true
+do
+clear
+echo "請輸入需要的服務
+1-search filename
+2-exit
+"
+read -n 1
+case $REPLY in
+  1)
+    while true
+     do
+       clear
+       read -p "請輸入filename(如想退出請按3):" file
+       [ -f "$file" ] && echo "有找到檔案" && sleep 1 && break
+       [ "$file" == "3" ] && break
+       echo "無此檔案" && sleep 1 && continue
+     done
+    break
+  ;;
+
+  2)
+    echo "End"
+    break
+  ;;
+
+  *)
+    echo;echo "輸入錯誤，請選1,2"
+    sleep 1
+    continue
+  ;;
+
+esac
+done
+echo "謝謝"

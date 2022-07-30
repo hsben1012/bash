@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+read -p "給定目錄名稱(不存在自動建立):" ans
+if [ -d $ans ];then #判斷是否存在
+ echo "此結果已建立"
+ sleep 1
+else
+ mkdir $ans
+ sleep 1
+ echo "呈現建立結果"
+ ls -alht
+fi

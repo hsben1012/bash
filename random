@@ -1,0 +1,6 @@
+#!/bin/bash
+while (( $(($RANDOM%7)) ))
+do
+  #if [ $var != "0" ] && echo $var
+  sleep 0.5
+done #< echo "$(($RANDOM%7))"

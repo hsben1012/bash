@@ -1,0 +1,12 @@
+#!/bin/bash
+[ "$USER" != "root" ] && echo "need root to run" && exit #判斷是否為root權限
+. /home/bigred/allfunction.txt
+read -p "Enter your usernam: " user
+echo -n "Enter your password: "
+read -s password
+echo
+
+for xx in user
+do
+  changepassword $user $password
+done

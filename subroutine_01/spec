@@ -1,0 +1,42 @@
+#!/bin/bash
+while true
+do
+clear
+echo "1.cpu
+2.memory
+3.hard disk
+4.離開
+"
+read -n 1;sleep 1
+case $REPLY in
+  1)
+    /home/bigred/subroutine_01/cpu.sh
+    continue
+  ;;
+
+  2)
+    /home/bigred/subroutine_01/memory.sh
+    continue
+  ;;
+
+  3)
+    /home/bigred/subroutine_01/harddisk.sh
+    continue
+  ;;
+
+  4)
+    echo
+    sleep 1
+    break
+  ;;
+
+  *)
+    echo;echo "輸入錯誤，請選1,2,3,4"
+    sleep 1
+    continue
+  ;;
+
+esac
+done
+echo "謝謝"
+sleep 1

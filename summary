@@ -1,0 +1,8 @@
+#!/bin/bash
+no=$1;sum=0
+while (($no<=$2))
+do
+  sum=$(($sum+$no))
+  no=$(($no+1))
+done
+echo $sum

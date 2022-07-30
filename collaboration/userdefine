@@ -1,0 +1,9 @@
+#!/bin/bash
+[ "$USER" != "root" ] && echo "need root to run" && exit #判斷是否為root權限
+. /home/bigred/collaboration/sre.conf
+. /home/bigred/allfunction.txt
+
+for xx in $PROJECT_USER_NAME
+do
+  userdefine $1 $xx
+done

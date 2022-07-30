@@ -1,0 +1,11 @@
+#!/bin/bash
+a=$#
+[ $# == "0" ] && echo "Need to input parameters." && exit
+
+tmparray=($@)
+
+for ((b=($a-1);b>=0;b=b-1))
+do
+  echo ${tmparray[$b]}
+  sleep 2
+done

@@ -1,0 +1,33 @@
+#!/bin/bash
+echo "輸入分數來知道級數"
+read
+case $REPLY in
+1)
+echo "1111"
+;;
+
+2)
+echo "2222"
+;;
+
+3)
+echo "3333"
+;;
+
+*)
+echo "other"
+;;
+
+esac
+
+echo end
+
+#if [ "$REPLY" -ge "90" ];then
+#  echo 'A grade'
+#elif [ "$REPLY" -ge "80" ];then
+#  echo 'B grade'
+#elif [ "$REPLY" -ge "60" ];then
+#  echo 'C grade'
+#else
+#  echo "D grade"
+#fi

@@ -1,0 +1,19 @@
+#!/bin/bash
+fruits=(
+"apple"
+"pear"
+"orange"
+"watermelon"
+)
+echo "Please guess which fruit I like: "
+select var in ${fruits[@]}
+do
+  echo "Your input: $REPLY"
+  if [ $var == "apple" ]; then
+    echo "Congratulations, u are my best friend!"
+    break
+  else
+    echo "Try again."
+  fi
+done
+

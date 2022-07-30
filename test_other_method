@@ -1,0 +1,26 @@
+#!/bin/bash
+nn=0
+nnn=0
+while read varr
+do
+  ans=(${ans[@]} $varr) #append element to array
+done < test_answer.txt
+
+while read var
+do
+  clear
+  echo -e ${var//"("/"\n("}
+  read -p "請輸入1、2、3、4: " sss < /dev/tty #因為read裡又有read，要告訴電腦[>  
+  read #使他讀回 var
+  if [ "$sss" == "${ans[($nn)]}" ];then
+    nnn=$(($nnn+1))
+    echo "答對了!"
+    sleep 1
+  else
+    echo "錯了!"
+    sleep 1
+  fi
+  nn=$(($nn+1))
+  echo
+done < test_topic_tmp1
+echo "總共答對 $nnn 題"

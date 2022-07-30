@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "輸入要計算的區間:"
+read -p "第1個數字: " ans;read -p "第2個數字: " anss
+no=$ans;sum=0
+while (($no<=$anss))
+do
+  sum=$(($sum+$no))
+  no=$(($no+1))
+done
+echo "總和: $sum"

@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "請在5秒內從1-9猜1個數字:"
+read -t 5 -n 1 ans
+  if  [ "$ans" = "5" ];then
+    echo '答對了'
+  else
+    echo '哈猜不到'
+  fi

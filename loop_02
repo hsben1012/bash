@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ $# == "0" ]; then
+  echo "請給2個參數"
+else
+  star=$1
+  while true
+  do
+  if [ $star -le $2 ] && [ $2 -le "255" ]; then
+    echo "192.168.1.$star"
+    star=$(($star+1))
+  else
+    break
+  fi
+  done
+fi

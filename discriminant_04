@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Hit a key, then hit return."
+read -n 1
+case "$REPLY" in
+[[:lower:]]) echo;echo "Lowercase letter" ;;
+[[:upper:]]) echo;echo "Uppercase letter" ;;
+[0-9]) echo;echo "Digit" ;;
+*) echo;echo "Punctuation, whitespace, or other" ;;
+esac

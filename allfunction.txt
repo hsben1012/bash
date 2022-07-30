@@ -1,0 +1,181 @@
+hd()
+{
+disk=`df -mh | grep "/dev/sda2" | fmt -u | cut -d " " -f 2`
+}
+
+memory()
+{
+mem=`free -mh| grep "Mem:"| fmt -u| cut -d " " -f 2`
+}
+
+cpu()
+{
+cpu=` cat /proc/cpuinfo | grep "model name" | sort -u | cut -d ":" -f 2 | cut -d " " -f 2-6`
+}
+
+read_01()
+{
+echo "請輸入第1個數字:"
+read a
+
+echo "請輸入第2個數字:"
+read b
+}
+
+add()
+{
+result=$(($1+$2))
+}
+
+sub()
+{
+result=$(($1-$2))
+}
+
+div()
+{
+result=$(($1/$2))
+}
+
+multi()
+{
+result=$(($1*$2))
+}
+
+userdefine()
+{
+if [ "$1" == "add" ]; then
+  cat /etc/passwd | grep $2 >/dev/null
+  if [ $? != "0" ]; then
+    useradd -m -s /bin/bash $2 &>/dev/null
+    echo $2:$2 | chpasswd #assign password to new user
+    echo "$2 is created. Password is username."
+  else
+    echo "$2 has been created."
+  fi
+elif [ "$1" == "delete" ]; then
+  userdel -r $2 &>/dev/null
+  echo "Users are deleted."
+else
+  echo "Please input command(add/delete)."
+fi
+}
+
+changepassword()
+{
+ echo $1:$2 | chpasswd
+}
+
+case()
+{
+#!/bin/bash
+while true #[ $REPLY -le "4" ]
+clear
+echo "請輸入1-4選項:"
+read
+do
+  case $REPLY in
+            1)
+      echo "program 1"
+      sleep 1
+    ;;
+
+    2)
+      echo "program 2"
+      sleep 1
+    ;;
+
+    3)
+      echo "program 3"
+      sleep 1
+    ;;
+
+    4)
+      echo "end program"
+      sleep 1
+      exit
+    ;;
+
+    *)
+      echo "請輸入1-4選項:"
+      read
+    ;;
+  esac
+done
+}
+
+code()
+{
+#!/bin/bash
+echo "請輸入密碼"
+read
+echo ${REPLY//[!A-Z]/}> tmp.txt
+grep "QWER" tmp.txt>tmp1.txt
+if  [ "$(cat tmp1.txt)" = "$(cat passwd)" ];then
+  echo 'pass'
+else
+  echo 'not correct'
+fi
+rm -r tmp.txt tmp1.txt
+}
+
+while_read()
+{
+#!/bin/bash
+[ $# == "0" ] && echo "沒有輸入參數" && exit #判斷是否有輸入參數
+
+[ -f $1 ]
+[ $? == "1" ] && echo "此檔案不存在" && exit
+cat $1 | while read
+do
+  echo $REPLY
+  sleep 0.1
+done
+echo;echo "--End--"
+}
+
+summary_even()
+{
+#!/bin/bash
+odd=1;sum=0;oddd=1
+while true
+do
+  oddd=$(($odd*2))
+  if [ $oddd -le 100 ]; then
+    sum=$(($sum+$oddd))
+    odd=$(($odd+1))
+    continue
+  else
+    break
+  fi
+done
+echo $sum
+}
+
+summary_odd()
+{
+#!/bin/bash
+odd=1;sum=0;oddd=1
+while true
+do
+  oddd=$((($odd-1)*2+1))
+  if [ $oddd -le 100 ]; then
+    sum=$(($sum+$oddd))
+    odd=$(($odd+1))
+    continue
+  else
+    break
+  fi
+done
+echo $sum
+}
+
+for()
+{
+#!/bin/bash
+for ((no=1;no<=4;no=no+1))
+do
+  echo $no
+done
+echo end
+}

@@ -1,0 +1,9 @@
+#!/bin/bash
+read -p "Do you love me?" ans
+     ans=${ans,,} #把輸入全變小寫
+     if  [ "${ans/o/}" = "n" ];then #把o替換成空字串
+      echo 'It hurts. T.T'
+     else
+      echo 'I love you, too.<3'
+     fi
+

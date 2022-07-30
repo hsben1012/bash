@@ -1,0 +1,15 @@
+#!/bin/bash
+[ $USER != 'root' ] && echo "PERMISSION DENIED" && exit
+brctl addbr macsw &>/dev/null #create Bridge named macsw
+ifconfig macsw 172.16.20.254 netmask 255.255.255.0 up &>/dev/null #setup Bridge(macsw) IP address & netmask & turn on
+for ((c=0;c<=7;c=c+1))
+do
+  tunctl -b -u $USER #create TAP
+  ifconfig tap${c} up #turn on TAP
+  brctl addif macsw tap$c #insert TAP into Bridge
+done &>/dev/null
+echo 'Display MAC table of "macsw" device'
+brctl showmacs macsw | sort -u -n
+echo
+echo 'Display NET devices on "macsw" bridge'
+brctl show

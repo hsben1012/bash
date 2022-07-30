@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "輸入分數與60比大小"
+read
+if  [ "$REPLY" -ge "60" ];then
+  echo 'pass'
+else
+  echo 'no pass'
+fi

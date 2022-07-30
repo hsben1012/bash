@@ -1,0 +1,14 @@
+#!/bin/bash
+clear
+read -p "給定帳號名稱(不存在自動建立):" ansss
+cat /etc/passwd | grep $ansss >/dev/null #列出有帳號的檔案並且尋找輸入字元
+if [ $? != 0 ]
+ then
+  sudo useradd -m -s /bin/bash $ansss #建立帳號
+ sleep 1
+ echo "呈現建立結果"
+ ls /home
+ else
+  echo "此帳號已經存在"
+ sleep 1
+fi

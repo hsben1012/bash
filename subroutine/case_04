@@ -1,0 +1,51 @@
+#!/bin/bash
+while true
+do
+clear
+echo "1.目前使用者
+2.家目錄
+3.主機名稱
+4.離開
+"
+read -n 1
+case $REPLY in
+  1)
+    /home/bigred/subroutine/b.sh
+    /home/bigred/subroutine/username.sh
+    sleep 1
+    /home/bigred/subroutine/a.sh
+    continue
+  ;;
+
+  2)
+    /home/bigred/subroutine/b.sh
+    /home/bigred/subroutine/HOME.sh
+    sleep 1
+    /home/bigred/subroutine/a.sh
+    continue
+  ;;
+
+  3)
+    /home/bigred/subroutine/b.sh
+    /home/bigred/subroutine/hostname.sh
+    sleep 1
+    /home/bigred/subroutine/a.sh
+    continue
+  ;;
+
+  4)
+    echo
+    sleep 1
+    break
+  ;;
+
+  *)
+    echo;echo "輸入錯誤，請選1,2,3"
+    sleep 1
+    continue
+  ;;
+
+esac
+done
+echo "謝謝"
+sleep 1

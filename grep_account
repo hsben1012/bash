@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+echo "請輸入要查詢帳號名稱"
+read
+grep $REPLY /etc/passwd /etc/group>/dev/null
+if [ "$?" == "0" ];then
+  echo "此帳號已經存在"
+else
+  echo "此帳號不存在"
+fi

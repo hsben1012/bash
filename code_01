@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+read -p "請輸入密碼:" ansss
+if [ "$ansss" = 1234 ];then
+  echo "pass"
+else
+  echo "not correct"
+fi

@@ -1,0 +1,59 @@
+#!/bin/bash
+clear
+nnn=0
+echo "自然組之歷史考題 單選題： （每題10分）
+1. 為了救愛妾而引清兵入關的明末將領為：
+(1) 吳一桂
+(2) 吳二桂
+(3) 吳三桂
+(4) 吳四桂
+"
+read -p "請輸入1、2、3、4: " ans1
+if [ "$ans1" == "3" ];then
+  nnn=$((nnn+1))
+  echo "答對$nnn題，接著做下一題目"
+  sleep 1
+#  clear
+else
+  echo "錯了! XDD  答對$nnn題"
+  sleep 1
+  exit
+fi
+
+echo
+echo "2. 呈上題，其愛妾是：
+(1) 林粉圓
+(2) 王湯圓
+(3) 張芋圓
+(4) 陳圓圓
+"
+read -p "請輸入1、2、3、4: " ans1
+if [ "$ans1" == "4" ];then
+  nnn=$((nnn+1))
+  echo "答對$nnn題，接著做下一題目"
+  sleep 1
+#  clear
+else
+  echo "錯了! XDD  答對$nnn題"
+  sleep 1
+  exit
+fi
+
+echo
+echo "3. 秦二世時，專擅朝政、指鹿為馬的是： 
+(1) 趙高 
+(2) 趙低 
+(3) 陳高 
+(4) 陳紹
+"
+read -p "請輸入1、2、3、4: " ans1
+if [ "$ans1" == "1" ];then
+  nnn=$((nnn+1))
+  echo "答對$nnn題，結束作答"
+  sleep 1
+#  clear
+else
+  echo "錯了! XDD 結束作答 答對$nnn題"
+  sleep 1
+  exit
+fi

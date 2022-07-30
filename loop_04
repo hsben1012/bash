@@ -1,0 +1,31 @@
+#!/bin/bash
+echo -n "請輸入第1段區間(輸入2組數字): "; read w1 w2
+echo -n "請輸入第1段區間(輸入2組數字): "; read x1 x2
+echo -n "請輸入第1段區間(輸入2組數字): "; read y1 y2
+echo -n "請輸入第1段區間(輸入2組數字): "; read z1 z2
+w=$w1
+while (($w<=$w2))
+do
+  echo "$w>>>>"
+  w=$(($w+1))
+  x=$x1
+  while (($x<=$x2))
+  do
+    echo " $x>"
+    x=$(($x+1))
+    y=$y1
+    while (($y<=$y2))
+    do
+      echo -n "  $y:"
+      z=$z1
+      while (($z<=$z2))
+      do
+        echo -n "$z "
+        z=$(($z+1))
+      done
+      y=$(($y+1))
+      echo
+    done
+  done
+  echo
+done

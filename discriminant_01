@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "輸入分數來知道級數"
+read
+if  [ "$REPLY" -ge "80" ];then
+  echo 'B grade'
+elif [ "$REPLY" -ge "60" ];then
+  echo 'C grade'
+else
+  echo "D grade"
+fi

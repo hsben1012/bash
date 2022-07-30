@@ -1,0 +1,28 @@
+#!/bin/bash
+. /home/bigred/allfunction.txt
+echo "請輸入2個數字:"
+read a b
+echo '請輸入要何種運算 [1: +; 2: -; 3: *; 4: /]:'
+read
+case $REPLY in
+1)
+  add $a $b
+  echo "結果是: $result"
+;;
+
+2)
+  sub $a $b
+  echo "結果是: $result"
+;;
+
+3)
+  multi $a $b
+  echo "結果是: $result"
+;;
+
+4)
+  div $a $b
+  echo "結果是: $result"
+;;
+
+esac

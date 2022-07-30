@@ -1,0 +1,11 @@
+#!/bin/bash
+[ $# == "0" ] && echo "沒有輸入參數" && exit #判斷是否有輸入參數
+
+[ -f $1 ]
+[ $? == "1" ] && echo "此檔案不存在" && exit
+cat $1 | while read
+do
+  echo $REPLY
+  sleep 0.1
+done
+echo;echo "--End--"

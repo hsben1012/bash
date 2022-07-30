@@ -1,0 +1,15 @@
+#!/bin/bash
+read -p "給定帳號名稱(存在自動刪除): "
+for var in $REPLY
+do
+  cat /etc/passwd | grep $var >/dev/null
+  if [ $? == 0 ]; then
+    sudo userdel -r $var &>/dev/null
+    sleep 1
+    echo "$var已被刪除"
+    ls /home
+  else
+    echo "$var此帳號不存在"
+    sleep 1
+  fi
+done

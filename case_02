@@ -1,0 +1,32 @@
+#!/bin/bash
+while true
+do
+clear
+echo "您上網的時數?
+1>1小時以內
+2>1-5小時
+3>5小時以上
+"
+read -p "選項1-3: "
+case $REPLY in
+  1)
+    echo "可以"
+    break
+  ;;
+
+  2)
+    echo "有點多"
+    break
+  ;;
+
+  3)
+    echo "太扯了吧"
+    break
+  ;;
+
+  *)
+    echo "請選1-3"
+  ;;
+esac
+done
+echo "謝謝"

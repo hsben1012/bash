@@ -1,0 +1,8 @@
+#!/bin/bash
+for command in $@
+do
+  echo "The output of $command command"
+  $command
+  echo
+done
+

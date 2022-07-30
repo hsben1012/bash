@@ -1,0 +1,25 @@
+#!/bin/bash
+#source allfunction.txt
+. allfunction.txt
+#hd()
+#{
+#disk=`df -mh | grep "/dev/sda2" | fmt -u | cut -d " " -f 2`
+#}
+
+#memory()
+#{
+#mem=`free -mh| grep "Mem:"| fmt -u| cut -d " " -f 2`
+#}
+
+#cpu()
+#{
+#cpu=` cat /proc/cpuinfo | grep "model name" | sort -u | cut -d ":" -f 2 | cut -d " " -f 2-6`
+#}
+
+cpu
+memory
+hd
+echo "CPU型號: "$cpu
+echo "RAM容量: "$mem
+echo "硬碟大小: "$disk
+

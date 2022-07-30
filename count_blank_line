@@ -1,0 +1,10 @@
+#!/bin/bash
+aa=0
+while read line
+do
+  echo $line | grep "^$" &>/dev/null
+  if [ $? == "0" ]; then
+    aa=$(($aa+1))
+  fi
+done < count_blank_line.txt
+echo $aa

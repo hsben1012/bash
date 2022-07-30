@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+read -p "你喜歡川普嗎(y/n)?"  number
+case $number in
+ y | Y)
+        echo "川普粉絲多一人"
+        ;;
+ n | N)
+        echo "討厭川普又多一人"
+        ;;
+*)
+        echo "請輸入(y或n)? "
+;;
+esac
+echo "謝謝您的答案"

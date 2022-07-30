@@ -1,0 +1,33 @@
+#!/bin/bash
+clear
+echo -n "請輸入垂直區間(輸入2組數字): "; read y1 y2
+[ -z $y1 ] && [ -z $y2 ] && echo “請輸入2個變數” && exit #判斷是否有輸入參數
+echo -n "請輸入水平區間(輸入2組數字): "; read z1 z2
+[ -z $z1 ] && [ -z $z2 ] && echo “請輸入2個變數” && exit
+
+if [ $y1 -gt $y2 ]; then #確定輸入順序是由小到大
+  tmp=$(($y1+$y2))
+  y1=$y2
+  y2=$(($tmp-$y1))
+  unset tmp
+fi
+
+if [ $z1 -gt $z2 ]; then
+  tmp=$(($z1+$z2))
+  z1=$z2
+  z2=$(($tmp-$z1))
+  unset tmp
+fi
+
+for (( y=${y1};y<=${y2};y=y+1 ))
+do
+  #[ "$(($y%2))" == "1" ] && echo o #奇數列顯示o
+  #[ "$(($y%2))" == "0" ] && echo x #偶數列顯示x
+  echo $y
+  for (( z=${z1};z<=${z2};z=z+1 ))
+  do
+    [ "$(($y%2))" == "1" ] && echo -n "o "
+    [ "$(($y%2))" == "0" ] && echo -n "x "
+  done
+  echo
+done

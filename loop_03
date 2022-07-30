@@ -1,0 +1,27 @@
+#!/bin/bash
+w=11
+while (($w<=15))
+do
+  echo "$w>>>>"
+  w=$(($w+1))
+  x=3
+  while (($x<=5))
+  do
+    echo " $x>"
+    x=$(($x+1))
+    y=6
+    while (($y<=8))
+    do
+      echo -n "  $y:"
+      z=9
+      while (($z<=13))
+      do
+        echo -n "$z "
+        z=$(($z+1))
+      done
+      y=$(($y+1))
+      echo
+    done
+  done
+  echo
+done

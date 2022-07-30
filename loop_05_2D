@@ -1,0 +1,27 @@
+#!/bin/bash
+clear
+echo -n "請輸入垂直區間(輸入2組數字): "; read y1 y2
+echo -n "請輸入水平區間(輸入2組數字): "; read z1 z2
+if [ $y1 -gt $y2 ]; then #確定輸入順序是由小到大
+  tmp=$(($y1+$y2))
+  y1=$y2
+  y2=$(($tmp-$y1))
+  unset tmp
+fi
+
+if [ $z1 -gt $z2 ]; then
+  tmp=$(($z1+$z2))
+  z1=$z2
+  z2=$(($tmp-$z1))
+  unset tmp
+fi
+
+for (( y=${y1};y<=${y2};y=y+1 ))
+do
+  echo $y
+  for (( z=${z1};z<=${z2};z=z+1 ))
+  do
+    echo -n "$z "
+  done
+  echo
+done

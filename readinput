@@ -1,0 +1,10 @@
+#!/bin/bash
+for ((no=1; no<=2; no=no+1))
+do
+  read -p "Input 1?" input1
+  read -p "Input 2?" input2
+  read -p "Input 3?" input3
+  echo $input1
+  echo $input2
+  echo $input3
+done

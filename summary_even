@@ -1,0 +1,14 @@
+#!/bin/bash
+odd=1;sum=0;oddd=1
+while true
+do
+  oddd=$(($odd*2))
+  if [ $oddd -le 100 ]; then
+    sum=$(($sum+$oddd))
+    odd=$(($odd+1))
+    continue
+  else
+    break
+  fi
+done
+echo $sum

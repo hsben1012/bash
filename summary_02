@@ -1,0 +1,9 @@
+#!/bin/bash
+(($# < 2)) && echo "請給2個參數" && exit
+no=$1;sum=0
+while (($no<=$2))
+do
+  sum=$(($sum+$no))
+  no=$(($no+1))
+done
+echo "總和: $sum"

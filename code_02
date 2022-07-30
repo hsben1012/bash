@@ -1,0 +1,9 @@
+#!/bin/bash
+read -p "請輸入密碼:" ans
+     ans=${ans,,}
+     if  [ "${ans}" = "qwer" ];then
+      echo 'pass'
+     else
+      echo 'not correct'
+     fi
+

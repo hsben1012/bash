@@ -1,0 +1,12 @@
+#!/bin/bash
+no=1;sum=0
+while (($no<=100))
+do
+  if [ $(($no%2)) != "0" ]; then
+    sum=$(($sum+$no))
+    no=$(($no+1))
+  else
+    no=$(($no+1))
+  fi
+done
+echo $sum

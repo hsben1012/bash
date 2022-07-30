@@ -1,0 +1,15 @@
+#!/bin/bash
+read -p "給定帳號名稱(不存在自動建立): "
+for var in $REPLY
+do
+  cat /etc/passwd | grep $var >/dev/null
+  if [ $? == 1 ]; then
+    sudo useradd -m -s /bin/bash $var &>/dev/null
+    echo "$var已建立"
+    sleep 1
+    echo -n "顯示已建立的資料夾: ";ls /home
+  else
+    echo "$var此帳號已存在"
+    sleep 1
+  fi
+done

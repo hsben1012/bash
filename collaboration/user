@@ -1,0 +1,20 @@
+#!/bin/bash
+[ "$USER" != "root" ] && echo "need root to run" && exit #判斷是否為root權限
+. sre.conf
+
+if [ "$1" == "delete" ]; then
+
+  for xx in $PROJECT_USER_NAME
+  do
+    userdel -r $xx
+  done
+
+else
+
+  for x in $PROJECT_USER_NAME
+  do
+    useradd -m -s /bin/bash $x
+    echo $x:$x | chpasswd
+  done
+
+fi

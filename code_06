@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "請輸入密碼"
+read
+echo ${REPLY//[!A-Z]/}> tmp.txt
+grep "QWER" tmp.txt>tmp1.txt
+if  [ "$(cat tmp1.txt)" = "$(cat passwd)" ];then
+  echo 'pass'
+else
+  echo 'not correct'
+fi
+rm -r tmp.txt tmp1.txt

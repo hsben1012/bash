@@ -1,0 +1,6 @@
+#!/bin/bash
+read -p "Enter number"
+for ((c=1;c<=$REPLY;c=c+1))
+do
+  tunctl -d tap$((${c}-1))
+done

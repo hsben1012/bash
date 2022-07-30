@@ -1,0 +1,11 @@
+#!/bin/bash
+no=1
+#while [ "$no" -le "4" ]
+while (($no<=4))
+do
+
+echo $no;sleep 1
+no=$((no+1))
+
+done
+echo end

@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "請輸入密碼" 
+read
+     if  [ "$REPLY" = "$0" ];then
+      echo 'pass'
+     else
+      echo 'not correct'
+     fi
+

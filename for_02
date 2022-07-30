@@ -1,0 +1,6 @@
+#!/bin/bash
+for ((no=$1;no<=$2;no=$(($no+1))))
+do
+  echo $no
+done
+echo end

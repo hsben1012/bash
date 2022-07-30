@@ -1,0 +1,60 @@
+#!/bin/bash
+echo -n "請輸入第1段區間(輸入2組數字): "; read w1 w2
+echo -n "請輸入第1段區間(輸入2組數字): "; read x1 x2
+echo -n "請輸入第1段區間(輸入2組數字): "; read y1 y2
+echo -n "請輸入第1段區間(輸入2組數字): "; read z1 z2
+if [ $w1 -gt $w2 ]; then
+  tmp=$(($w1+$w2))
+  w1=$w2
+  w2=$(($tmp-$w1))
+  unset tmp
+fi
+
+if [ $x1 -gt $x2 ]; then
+  tmp=$(($x1+$x2))
+  x1=$x2
+  x2=$(($tmp-$x1))
+  unset tmp
+fi
+
+if [ $y1 -gt $y2 ]; then
+  tmp=$(($y1+$y2))
+  y1=$y2
+  y2=$(($tmp-$y1))
+  unset tmp
+fi
+
+if [ $z1 -gt $z2 ]; then
+  tmp=$(($z1+$z2))
+  z1=$z2
+  z2=$(($tmp-$z1))
+  unset tmp
+fi
+
+w=$w1
+while (($w<=$w2))
+do
+  echo "$w>>>>"
+  w=$(($w+1))
+  x=$x1
+  while (($x<=$x2))
+  do
+    echo " $x>"
+    x=$(($x+1))
+    y=$y1
+    while (($y<=$y2))
+    do
+      echo -n "  $y:"
+      y=$(($y+1))
+      z=$z1
+      while (($z<=$z2))
+      do
+        echo -n "$z "
+        z=$(($z+1))
+      done
+      y=$(($y+1))
+      echo
+    done
+  done
+  echo
+done

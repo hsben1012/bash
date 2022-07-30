@@ -1,0 +1,6 @@
+#!/bin/bash
+. allfunction.txt
+read_01
+echo "第1個數字為$a"
+echo "第2個數字為$b"
+echo "2者相加為$(($a+$b))"

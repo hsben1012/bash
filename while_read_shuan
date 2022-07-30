@@ -1,0 +1,23 @@
+#!/bin/bash
+
+read -p "請問要讀取的檔案為何？ " ans
+
+ls | grep ^${ans}$ #有使用^$，要精準搜尋
+
+if
+[ $? != 0 ]
+
+then
+sleep 1
+echo "此 $ans 檔案不存在！"
+
+else
+while read line
+
+do
+echo $line
+sleep 1
+
+done < ${ans}
+
+fi
